@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Calculator</title>
+ 
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+ 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+ 
+        <!-- ============ SIDEBAR (unchanged) ============ -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <button class="menu-btn-close">☰</button>
+                <h3>Calculator</h3>
+            </div>
+ 
+            <nav class="modes-list">
+                <h4 class="section-label">Calculator</h4>
+                <button class="mode-item active" data-mode="standard">Standard</button>
+                <button class="mode-item" data-mode="scientific">Scientific</button>
+                <button class="mode-item" data-mode="programmer">Programmer</button>
+                <button class="mode-item" data-mode="date">Date Calculation</button>
+ 
+                <h4 class="section-label">Converter</h4>
+                <button class="mode-item" data-mode="currency">Currency</button>
+                <button class="mode-item" data-mode="volume">Volume</button>
+                <button class="mode-item" data-mode="length">Length</button>
+                <button class="mode-item" data-mode="weight">Weight and Mass</button>
+                <button class="mode-item" data-mode="temperature">Temperature</button>
+                <button class="mode-item" data-mode="energy">Energy</button>
+                <button class="mode-item" data-mode="area">Area</button>
+                <button class="mode-item" data-mode="speed">Speed</button>
+                <button class="mode-item" data-mode="time">Time</button>
+                <button class="mode-item" data-mode="power">Power</button>
+                <button class="mode-item" data-mode="data">Data</button>
+                <button class="mode-item" data-mode="pressure">Pressure</button>
+                <button class="mode-item" data-mode="angle">Angle</button>
+            </nav>
+        </aside>
+ 
+        <!-- ============ HISTORY PANEL (slides in from right) ============ -->
+        <aside class="history-panel">
+            <div class="history-header">
+                <h3>History</h3>
+                <button class="history-btn-close"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="history-list">
+                <p class="history-empty">No history yet</p>
+            </div>
+            <button class="history-clear"><i class="ri-delete-bin-line"></i> Clear all</button>
+        </aside>
+ 
+        <!-- ============ HEADER (unchanged) ============ -->
+        <header class="header">
+            <button class="menu-btn"><i class="ri-menu-fill"></i></button>
+            <h2 class="mode-name">Standard</h2>
+            <button class="history-btn"><i class="ri-history-line"></i></button>
+        </header>
+ 
+        <!-- ============ STANDARD MODE (default active) ============ -->
+        <section class="calc-mode active" data-mode="standard">
+            <div class="display">
+                <div class="prev-expr"></div>
+                <div class="current-value">0</div>
+            </div>
+            <div class="buttons">
+                <button class="op">%</button>
+                <button class="op">CE</button>
+                <button class="op">C</button>
+                <button class="op">⌫</button>
+ 
+                <button class="num">1/x</button>
+                <button class="op">x²</button>
+                <button class="op">√x</button>
+                <button class="op">÷</button>
+ 
+                <button class="num">7</button>
+                <button class="num">8</button>
+                <button class="num">9</button>
+                <button class="op">×</button>
+ 
+                <button class="num">4</button>
+                <button class="num">5</button>
+                <button class="num">6</button>
+                <button class="op">−</button>
+ 
+                <button class="num">1</button>
+                <button class="num">2</button>
+                <button class="num">3</button>
+                <button class="op">+</button>
+ 
+                <button class="op">±</button>
+                <button class="num">0</button>
+                <button class="op">.</button>
+                <button class="equals">=</button>
+            </div>
+        </section>
+ 
+        <!-- ============ SCIENTIFIC MODE ============ -->
+        <section class="calc-mode" data-mode="scientific">
+            <div class="display">
+                <div class="prev-expr"></div>
+                <div class="current-value">0</div>
+            </div>
+            <div class="buttons sci-buttons">
+                <button class="op">2nd</button>
+                <button class="op">π</button>
+                <button class="op">e</button>
+                <button class="op">C</button>
+                <button class="op">⌫</button>
+ 
+                <button class="op">x²</button>
+                <button class="op">1/x</button>
+                <button class="op">|x|</button>
+                <button class="op">exp</button>
+                <button class="op">mod</button>
+ 
+                <button class="op">√</button>
+                <button class="op">(</button>
+                <button class="op">)</button>
+                <button class="op">n!</button>
+                <button class="op">÷</button>
+ 
+                <button class="op">xʸ</button>
+                <button class="num">7</button>
+                <button class="num">8</button>
+                <button class="num">9</button>
+                <button class="op">×</button>
+ 
+                <button class="op">10ˣ</button>
+                <button class="num">4</button>
+                <button class="num">5</button>
+                <button class="num">6</button>
+                <button class="op">−</button>
+ 
+                <button class="op">log</button>
+                <button class="num">1</button>
+                <button class="num">2</button>
+                <button class="num">3</button>
+                <button class="op">+</button>
+ 
+                <button class="op">ln</button>
+                <button class="op">±</button>
+                <button class="num">0</button>
+                <button class="op">.</button>
+                <button class="equals">=</button>
+ 
+                <button class="op">sin</button>
+                <button class="op">cos</button>
+                <button class="op">tan</button>
+                <button class="op">DEG</button>
+                <button class="op">F-E</button>
+            </div>
+        </section>
+ 
+        <!-- ============ PROGRAMMER MODE ============ -->
+        <section class="calc-mode" data-mode="programmer">
+            <div class="display">
+                <div class="prev-expr"></div>
+                <div class="current-value">0</div>
+                <div class="prog-base">
+                    <div class="base-row"><span class="base-label">HEX</span><span class="base-value">0</span></div>
+                    <div class="base-row active"><span class="base-label">DEC</span><span class="base-value">0</span></div>
+                    <div class="base-row"><span class="base-label">OCT</span><span class="base-value">0</span></div>
+                    <div class="base-row"><span class="base-label">BIN</span><span class="base-value">0</span></div>
+                </div>
+            </div>
+            <div class="buttons prog-buttons">
+                <button class="op">A</button>
+                <button class="op">&lt;&lt;</button>
+                <button class="op">&gt;&gt;</button>
+                <button class="op">C</button>
+                <button class="op">⌫</button>
+ 
+                <button class="op">B</button>
+                <button class="op">(</button>
+                <button class="op">)</button>
+                <button class="op">%</button>
+                <button class="op">÷</button>
+ 
+                <button class="op">C</button>
+                <button class="num">7</button>
+                <button class="num">8</button>
+                <button class="num">9</button>
+                <button class="op">×</button>
+ 
+                <button class="op">D</button>
+                <button class="num">4</button>
+                <button class="num">5</button>
+                <button class="num">6</button>
+                <button class="op">−</button>
+ 
+                <button class="op">E</button>
+                <button class="num">1</button>
+                <button class="num">2</button>
+                <button class="num">3</button>
+                <button class="op">+</button>
+ 
+                <button class="op">F</button>
+                <button class="op">±</button>
+                <button class="num">0</button>
+                <button class="op">.</button>
+                <button class="equals">=</button>
+ 
+                <button class="op">AND</button>
+                <button class="op">OR</button>
+                <button class="op">XOR</button>
+                <button class="op">NOT</button>
+                <button class="op">NAND</button>
+            </div>
+        </section>
+ 
+        <!-- ============ DATE CALCULATION MODE ============ -->
+        <section class="calc-mode" data-mode="date">
+            <div class="date-calc">
+                <label class="date-label">Calculate</label>
+                <select class="date-operation">
+                    <option>Difference between dates</option>
+                    <option>Add or subtract days</option>
+                </select>
+ 
+                <label class="date-label">From</label>
+                <input type="date" class="date-from" />
+ 
+                <label class="date-label">To</label>
+                <input type="date" class="date-to" />
+ 
+                <div class="date-result">
+                    <div class="date-result-label">Difference</div>
+                    <div class="date-result-value">0 days</div>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ CURRENCY ============ -->
+        <section class="calc-mode" data-mode="currency">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option>USD — US Dollar</option>
+                        <option>EUR — Euro</option>
+                        <option>GBP — British Pound</option>
+                        <option>JPY — Japanese Yen</option>
+                        <option selected>PKR — Pakistani Rupee</option>
+                        <option>INR — Indian Rupee</option>
+                        <option>CAD — Canadian Dollar</option>
+                        <option>AUD — Australian Dollar</option>
+                        <option>CNY — Chinese Yuan</option>
+                        <option>AED — UAE Dirham</option>
+                        <option>SAR — Saudi Riyal</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option selected>USD — US Dollar</option>
+                        <option>EUR — Euro</option>
+                        <option>GBP — British Pound</option>
+                        <option>JPY — Japanese Yen</option>
+                        <option>PKR — Pakistani Rupee</option>
+                        <option>INR — Indian Rupee</option>
+                        <option>CAD — Canadian Dollar</option>
+                        <option>AUD — Australian Dollar</option>
+                        <option>CNY — Chinese Yuan</option>
+                        <option>AED — UAE Dirham</option>
+                        <option>SAR — Saudi Riyal</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ VOLUME ============ -->
+        <section class="calc-mode" data-mode="volume">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option>Milliliter</option>
+                        <option selected>Liter</option>
+                        <option>Cubic Meter</option>
+                        <option>Teaspoon (US)</option>
+                        <option>Tablespoon (US)</option>
+                        <option>Fluid Ounce (US)</option>
+                        <option>Cup (US)</option>
+                        <option>Pint (US)</option>
+                        <option>Quart (US)</option>
+                        <option>Gallon (US)</option>
+                        <option>Cubic Inch</option>
+                        <option>Cubic Foot</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Milliliter</option>
+                        <option>Liter</option>
+                        <option>Cubic Meter</option>
+                        <option>Teaspoon (US)</option>
+                        <option>Tablespoon (US)</option>
+                        <option>Fluid Ounce (US)</option>
+                        <option>Cup (US)</option>
+                        <option>Pint (US)</option>
+                        <option>Quart (US)</option>
+                        <option selected>Gallon (US)</option>
+                        <option>Cubic Inch</option>
+                        <option>Cubic Foot</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ LENGTH ============ -->
+        <section class="calc-mode" data-mode="length">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option>Millimeter</option>
+                        <option>Centimeter</option>
+                        <option selected>Meter</option>
+                        <option>Kilometer</option>
+                        <option>Inch</option>
+                        <option>Foot</option>
+                        <option>Yard</option>
+                        <option>Mile</option>
+                        <option>Nautical Mile</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Millimeter</option>
+                        <option>Centimeter</option>
+                        <option>Meter</option>
+                        <option>Kilometer</option>
+                        <option selected>Inch</option>
+                        <option>Foot</option>
+                        <option>Yard</option>
+                        <option>Mile</option>
+                        <option>Nautical Mile</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ WEIGHT AND MASS ============ -->
+        <section class="calc-mode" data-mode="weight">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option>Milligram</option>
+                        <option>Gram</option>
+                        <option selected>Kilogram</option>
+                        <option>Tonne (Metric)</option>
+                        <option>Carat</option>
+                        <option>Ounce</option>
+                        <option>Pound</option>
+                        <option>Stone</option>
+                        <option>Short Ton (US)</option>
+                        <option>Long Ton (UK)</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Milligram</option>
+                        <option>Gram</option>
+                        <option>Kilogram</option>
+                        <option>Tonne (Metric)</option>
+                        <option>Carat</option>
+                        <option>Ounce</option>
+                        <option selected>Pound</option>
+                        <option>Stone</option>
+                        <option>Short Ton (US)</option>
+                        <option>Long Ton (UK)</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ TEMPERATURE ============ -->
+        <section class="calc-mode" data-mode="temperature">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="0" />
+                    <select class="conv-from-unit">
+                        <option selected>Celsius</option>
+                        <option>Fahrenheit</option>
+                        <option>Kelvin</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Celsius</option>
+                        <option selected>Fahrenheit</option>
+                        <option>Kelvin</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ ENERGY ============ -->
+        <section class="calc-mode" data-mode="energy">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option>Electron Volt</option>
+                        <option selected>Joule</option>
+                        <option>Kilojoule</option>
+                        <option>Thermal Calorie</option>
+                        <option>Food Calorie</option>
+                        <option>Foot-pound</option>
+                        <option>British Thermal Unit</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Electron Volt</option>
+                        <option>Joule</option>
+                        <option selected>Kilojoule</option>
+                        <option>Thermal Calorie</option>
+                        <option>Food Calorie</option>
+                        <option>Foot-pound</option>
+                        <option>British Thermal Unit</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ AREA ============ -->
+        <section class="calc-mode" data-mode="area">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option>Square Millimeter</option>
+                        <option>Square Centimeter</option>
+                        <option selected>Square Meter</option>
+                        <option>Hectare</option>
+                        <option>Square Kilometer</option>
+                        <option>Square Inch</option>
+                        <option>Square Foot</option>
+                        <option>Square Yard</option>
+                        <option>Acre</option>
+                        <option>Square Mile</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Square Millimeter</option>
+                        <option>Square Centimeter</option>
+                        <option>Square Meter</option>
+                        <option>Hectare</option>
+                        <option>Square Kilometer</option>
+                        <option>Square Inch</option>
+                        <option selected>Square Foot</option>
+                        <option>Square Yard</option>
+                        <option>Acre</option>
+                        <option>Square Mile</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ SPEED ============ -->
+        <section class="calc-mode" data-mode="speed">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option>Centimeter per second</option>
+                        <option>Meter per second</option>
+                        <option selected>Kilometer per hour</option>
+                        <option>Foot per second</option>
+                        <option>Mile per hour</option>
+                        <option>Knot</option>
+                        <option>Mach (at Sea Level)</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Centimeter per second</option>
+                        <option>Meter per second</option>
+                        <option>Kilometer per hour</option>
+                        <option>Foot per second</option>
+                        <option selected>Mile per hour</option>
+                        <option>Knot</option>
+                        <option>Mach (at Sea Level)</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ TIME ============ -->
+        <section class="calc-mode" data-mode="time">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option>Microsecond</option>
+                        <option>Millisecond</option>
+                        <option selected>Second</option>
+                        <option>Minute</option>
+                        <option>Hour</option>
+                        <option>Day</option>
+                        <option>Week</option>
+                        <option>Year</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Microsecond</option>
+                        <option>Millisecond</option>
+                        <option>Second</option>
+                        <option selected>Minute</option>
+                        <option>Hour</option>
+                        <option>Day</option>
+                        <option>Week</option>
+                        <option>Year</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ POWER ============ -->
+        <section class="calc-mode" data-mode="power">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option selected>Watt</option>
+                        <option>Kilowatt</option>
+                        <option>Megawatt</option>
+                        <option>Horsepower</option>
+                        <option>Foot-pound per minute</option>
+                        <option>BTU per minute</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Watt</option>
+                        <option selected>Kilowatt</option>
+                        <option>Megawatt</option>
+                        <option>Horsepower</option>
+                        <option>Foot-pound per minute</option>
+                        <option>BTU per minute</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ DATA ============ -->
+        <section class="calc-mode" data-mode="data">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option>Bit</option>
+                        <option>Byte</option>
+                        <option>Kilobit</option>
+                        <option>Kilobyte</option>
+                        <option>Megabit</option>
+                        <option selected>Megabyte</option>
+                        <option>Gigabit</option>
+                        <option>Gigabyte</option>
+                        <option>Terabit</option>
+                        <option>Terabyte</option>
+                        <option>Petabit</option>
+                        <option>Petabyte</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Bit</option>
+                        <option>Byte</option>
+                        <option>Kilobit</option>
+                        <option>Kilobyte</option>
+                        <option>Megabit</option>
+                        <option>Megabyte</option>
+                        <option>Gigabit</option>
+                        <option selected>Gigabyte</option>
+                        <option>Terabit</option>
+                        <option>Terabyte</option>
+                        <option>Petabit</option>
+                        <option>Petabyte</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ PRESSURE ============ -->
+        <section class="calc-mode" data-mode="pressure">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option>Atmosphere</option>
+                        <option>Bar</option>
+                        <option>Kilopascal</option>
+                        <option>Millimeter of Mercury</option>
+                        <option selected>Pascal</option>
+                        <option>PSI (Pound per Square Inch)</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Atmosphere</option>
+                        <option selected>Bar</option>
+                        <option>Kilopascal</option>
+                        <option>Millimeter of Mercury</option>
+                        <option>Pascal</option>
+                        <option>PSI (Pound per Square Inch)</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+        <!-- ============ ANGLE ============ -->
+        <section class="calc-mode" data-mode="angle">
+            <div class="converter">
+                <div class="conv-field">
+                    <input type="number" class="conv-from-value" value="1" />
+                    <select class="conv-from-unit">
+                        <option selected>Degrees</option>
+                        <option>Radians</option>
+                        <option>Gradians</option>
+                    </select>
+                </div>
+                <div class="conv-field">
+                    <input type="number" class="conv-to-value" value="0" />
+                    <select class="conv-to-unit">
+                        <option>Degrees</option>
+                        <option selected>Radians</option>
+                        <option>Gradians</option>
+                    </select>
+                </div>
+                <div class="buttons conv-buttons">
+                    <button class="num">7</button><button class="num">8</button><button class="num">9</button><button class="op">⌫</button>
+                    <button class="num">4</button><button class="num">5</button><button class="num">6</button><button class="op">C</button>
+                    <button class="num">1</button><button class="num">2</button><button class="num">3</button><button class="op">±</button>
+                    <button class="num">0</button><button class="op">.</button><button class="op"></button><button class="op"></button>
+                </div>
+            </div>
+        </section>
+ 
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
