@@ -4,7 +4,7 @@
 
 A feature-rich, beautifully designed calculator with **16 different modes** — built entirely in **vanilla HTML, CSS & JavaScript**. No frameworks, no libraries, just clean web fundamentals.
 
-🔗 **[Live Demo](https://saman767.github.io/codealpha_tasks/task-1-calculator/)**
+🔗 **[Live Demo](https://saman767.github.io/codealpha_tasks/)**
 
 ---
 
@@ -58,17 +58,7 @@ Static rates for USD, PKR, EUR, GBP, INR, AED, SAR & more
 
 ---
 
-## 📸 Screenshots
 
-| Standard | Scientific | Programmer |
-|----------|-----------|-----------|
-| ![Standard](screenshots/standard.png) | ![Scientific](screenshots/scientific.png) | ![Programmer](screenshots/programmer.png) |
-
-| History Panel | Date Calculator | Converter |
-|--------------|----------------|-----------|
-| ![History](screenshots/history.png) | ![Date](screenshots/date.png) | ![Converter](screenshots/converter.png) |
-
----
 
 ## 🚀 Run Locally
 
